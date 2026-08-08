@@ -5,9 +5,20 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const dynamic = "force-dynamic";
 
-export default function OpenGraphImage() {
+function asDataUrl(buffer: ArrayBuffer) {
+  let binary = "";
+
+  for (const byte of new Uint8Array(buffer)) {
+    binary += String.fromCharCode(byte);
+  }
+
+  return `data:image/webp;base64,${btoa(binary)}`;
+}
+
+export default async function OpenGraphImage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lp-airdrone.vercel.app";
-  const heroImage = new URL("/assets/hero/hero-workshop.webp", siteUrl).toString();
+  const heroUrl = new URL("/assets/hero/hero-workshop.webp", siteUrl).toString();
+  const heroImage = asDataUrl(await fetch(heroUrl).then((response) => response.arrayBuffer()));
 
   return new ImageResponse(
     (
