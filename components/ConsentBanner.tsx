@@ -18,7 +18,7 @@ export function ConsentBanner() {
   const [settings, setSettings] = useState(false);
   const choice = choiceOverride === undefined ? savedChoice : choiceOverride;
   const save = (next: Choice) => { localStorage.setItem(storageKey, JSON.stringify(next)); updateConsent(next.marketing, next.analytics); trackEvent("consent_update", next); setChoiceOverride(next); setSettings(false); };
-  if (choice) return <button className="cookie-reopen" type="button" onClick={() => { setChoiceOverride(null); setSettings(true); }}><Settings2 size={16} /> Gerenciar cookies</button>;
+  if (choice) return <button className="cookie-reopen" type="button" aria-label="Gerenciar cookies" title="Gerenciar cookies" onClick={() => { setChoiceOverride(null); setSettings(true); }}><Settings2 size={16} /><span>Gerenciar cookies</span></button>;
   return <section className="consent" aria-label="Preferências de cookies">
     <div><p className="eyebrow">PRIVACIDADE</p><h2>Você decide sobre seus dados.</h2><p>Usamos cookies necessários para o site funcionar e, com a sua permissão, para medir resultados e melhorar campanhas.</p></div>
     {settings && <fieldset><legend>Preferências</legend><label><input type="checkbox" checked readOnly /> Necessários (sempre ativos)</label><label><input type="checkbox" defaultChecked /> Analíticos (GA4)</label><label><input type="checkbox" defaultChecked /> Marketing (Google Ads e Meta Pixel quando configurado)</label></fieldset>}
