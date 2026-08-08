@@ -5,8 +5,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const dynamic = "force-dynamic";
 
-export default async function OpenGraphImage(request: Request) {
-  const heroImage = new URL("/assets/hero/hero-workshop.webp", request.url).toString();
+export default function OpenGraphImage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lp-airdrone.vercel.app";
+  const heroImage = new URL("/assets/hero/hero-workshop.webp", siteUrl).toString();
 
   return new ImageResponse(
     (
