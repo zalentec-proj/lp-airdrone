@@ -1,0 +1,55 @@
+/* eslint-disable @next/next/no-img-element */
+import { Award, Box, ChevronRight, CircleDollarSign, Cpu, MapPin, MessageCircle, Send, ShieldCheck, Truck, Wrench, type LucideIcon } from "lucide-react";
+import { Header } from "@/components/Header";
+import { Faq } from "@/components/Faq";
+import { SectionTracker } from "@/components/SectionTracker";
+import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { models, problems, reviews, siteConfig } from "@/lib/site";
+
+const benefits: Array<[LucideIcon, string]> = [
+  [CircleDollarSign, "Orçamento gratuito"], [Truck, "Frete ida e volta incluso"], [ShieldCheck, "Garantia de 90 dias"], [MapPin, "Atendimento em todo o Brasil"],
+];
+
+const steps: Array<[LucideIcon, string, string]> = [
+  [MessageCircle, "Solicite seu orçamento", "Fale conosco pelo WhatsApp e conte o que aconteceu com seu drone."],
+  [Box, "Envie seu drone", "Você recebe as instruções para postar com frete de ida e volta incluso."],
+  [Wrench, "Reparo e retorno", "O reparo começa após sua aprovação e o drone volta testado para você."],
+];
+
+function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) {
+  return <div className="section-heading"><p className="eyebrow">{eyebrow}</p><h2>{title}</h2>{copy && <p>{copy}</p>}</div>;
+}
+
+export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", name: siteConfig.name, url: siteConfig.url, inLanguage: "pt-BR" },
+      { "@type": "ProfessionalService", name: siteConfig.name, url: siteConfig.url, telephone: "+5543991622184", description: "Assistência técnica especializada em reparos e manutenção de drones DJI, com atendimento em todo o Brasil.", address: { "@type": "PostalAddress", streetAddress: "R. Maranhão, 209, Centro", addressLocality: "Londrina", addressRegion: "PR", postalCode: "86010-410", addressCountry: "BR" }, areaServed: { "@type": "Country", name: "Brasil" }, openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "09:00", closes: "18:00" }, { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "12:00" }] },
+      { "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "O orçamento é realmente gratuito?", acceptedAnswer: { "@type": "Answer", text: "Sim. A avaliação é gratuita e o reparo só começa após a aprovação do orçamento." } }] },
+    ],
+  };
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+    <Header />
+    <main id="conteudo">
+      <section className="hero" id="inicio"><SectionTracker id="inicio" index={1} />
+        <div className="hero-backdrop" />
+        <div className="container hero-grid">
+          <div className="hero-copy"><p className="eyebrow">ASSISTÊNCIA TÉCNICA ESPECIALIZADA DJI</p><h1>Seu drone DJI <span>voltou a voar</span> com segurança.</h1><p>Assistência técnica especializada, orçamento gratuito e frete de ida e volta incluso.</p><div className="hero-actions"><WhatsAppLink className="button" location="hero_primary" label="Solicitar orçamento"><Send size={18} /> Solicitar orçamento</WhatsAppLink><WhatsAppLink className="button button-outline" location="hero_secondary" label="Falar no WhatsApp"><MessageCircle size={18} /> Falar no WhatsApp</WhatsAppLink></div></div>
+          <img className="hero-drone" src="/assets/hero/drone.webp" alt="Drone DJI em assistência técnica" />
+        </div>
+      </section>
+      <section className="benefit-wrap" aria-label="Benefícios"><div className="container benefits">{benefits.map(([Icon, text]) => <div className="benefit" key={text}><Icon aria-hidden="true" /><span>{text}</span></div>)}</div></section>
+      <section className="section section-light process" id="como-funciona"><SectionTracker id="como-funciona" index={2} /><div className="container"><SectionHeading eyebrow="COMO FUNCIONA" title="Simples, rápido e seguro." /><div className="steps">{steps.map(([Icon, title, text], index) => <article className="step" key={title}><span className="step-number">0{index + 1}</span><Icon aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+      <section className="section section-dark problems" id="servicos"><SectionTracker id="servicos" index={3} /><div className="container"><SectionHeading eyebrow="ASSISTÊNCIA ESPECIALIZADA DJI" title="O que aconteceu com seu drone?" copy="Identifique o problema mais próximo do seu caso e fale diretamente com a equipe técnica." /><div className="problem-grid">{problems.map((problem) => <article className="problem-card" key={problem.id}><img src={problem.image} alt="" /><div><h3>{problem.title}</h3><WhatsAppLink location="problem_card" label="Solicitar análise" problem={problem.title} aria-label={`Solicitar análise para ${problem.title}`}>Solicitar análise <ChevronRight size={16} /></WhatsAppLink></div></article>)}</div></div></section>
+      <section className="section section-light models" id="modelos"><SectionTracker id="modelos" index={4} /><div className="container"><SectionHeading eyebrow="MODELOS ATENDIDOS" title="Assistência para diferentes linhas de drones DJI." copy="Consulte a equipe para confirmar o atendimento do seu modelo." /><div className="model-row">{models.map((model) => <article className="model-card" key={model.name}><img src={model.image} alt={`Drone da linha ${model.name}`} /><h3>{model.name}</h3><p>{model.examples}</p><WhatsAppLink location="models_section" label="Ver modelos" model={model.name}>Consultar linha <ChevronRight size={15} /></WhatsAppLink></article>)}</div><div className="center"><WhatsAppLink className="button" location="models_section" label="Consultar meu modelo">Consultar meu modelo</WhatsAppLink></div></div></section>
+      <section className="section section-dark about" id="sobre"><SectionTracker id="sobre" index={5} /><div className="container about-grid"><div className="about-image"><img src="/assets/about/airdrone-workshop.webp" alt="Ambiente técnico da AirDrone em Londrina" /></div><div><SectionHeading eyebrow="CONHEÇA A AIRDRONE" title="Uma empresa real por trás de cada reparo." /><p className="about-text">A AirDrone é uma assistência técnica especializada em drones DJI. Com sede física em Londrina–PR, reúne equipe especializada, operação estruturada e atendimento reconhecido pela precisão e transparência. Cada serviço é realizado com atenção, respeito ao equipamento e compromisso em cada detalhe.</p><div className="proof-grid"><span><Award />+5 anos de experiência</span><span><MapPin />Sede física em Londrina–PR</span><span><Cpu />Especialistas em DJI</span><span><ShieldCheck />90 dias de garantia</span></div><WhatsAppLink className="button" location="about_section" label="Falar com a equipe">Falar com a equipe</WhatsAppLink></div></div></section>
+      <section className="section section-light faq-section" id="faq"><SectionTracker id="faq" index={6} /><div className="container faq-grid"><div><SectionHeading eyebrow="TIRE SUAS DÚVIDAS" title="Antes de enviar seu drone" copy="Veja as respostas para as dúvidas mais comuns sobre avaliação, envio e reparo." /><div className="faq-aside"><img src="/assets/services/gimbal.webp" alt="Técnico avaliando o gimbal de um drone" /><p>AINDA TENHO UMA DÚVIDA</p><WhatsAppLink location="faq_card" label="Tirar dúvida">Falar com a equipe <ChevronRight size={17} /></WhatsAppLink></div></div><Faq /></div></section>
+      <section className="section section-dark national" id="atendimento-nacional"><SectionTracker id="atendimento-nacional" index={7} /><div className="container national-grid"><div><SectionHeading eyebrow="ATENDIMENTO NACIONAL" title="Você está longe? Seu drone não precisa ficar parado." /><p>A AirDrone está em Londrina–PR e atende clientes de diferentes regiões do Brasil.</p><ol className="national-steps"><li>Fale com a equipe</li><li>Receba as instruções</li><li>Envie o equipamento</li><li>Acompanhe o atendimento</li><li>Receba o drone de volta</li></ol><WhatsAppLink className="button" location="national_section" label="Quero enviar meu drone">Quero enviar meu drone</WhatsAppLink></div><div className="map-visual" role="img" aria-label="Mapa ilustrativo do Brasil com Londrina marcada como sede da AirDrone"><div className="map-label"><MapPin /> Londrina, PR</div><div className="map-dot" /></div></div></section>
+      <section className="section section-light reviews" id="avaliacoes"><SectionTracker id="avaliacoes" index={8} /><div className="container"><SectionHeading eyebrow="QUEM JÁ CONFIOU NA AIRDRONE" title="Experiências de clientes que voltaram a voar." /><p className="review-note">Avaliações migradas do conteúdo público da AirDrone.</p><div className="review-grid">{reviews.map((review) => <blockquote key={review.name}><span>“</span><p>{review.text}</p><footer>{review.name}</footer></blockquote>)}</div><div className="review-cta"><WhatsAppLink className="button button-outline-dark" location="footer" label="Falar com AirDrone">Falar com a AirDrone</WhatsAppLink></div></div></section>
+    </main>
+    <footer className="footer" id="contato"><div className="container footer-grid"><div><img className="footer-logo" src="/assets/brand/logo-airdrone-white.svg" alt="AirDrone" /><p>Assistência técnica especializada em drones DJI, com atendimento em todo o Brasil.</p></div><div><p className="footer-label">NAVEGAÇÃO</p><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#sobre">Sobre a AirDrone</a><a href="#faq">Perguntas frequentes</a></div><div><p className="footer-label">CONTATO</p><WhatsAppLink location="footer" label="WhatsApp">{siteConfig.phoneDisplay}</WhatsAppLink><p>{siteConfig.location}</p><p>{siteConfig.hours}</p></div><div><p className="footer-label">INSTITUCIONAL</p><a href="/politica-de-privacidade">Política de Privacidade</a><a href="/termos-de-uso">Termos de Uso</a><a href="/garantia-e-envio">Garantia e envio</a></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} AirDrone. Todos os direitos reservados.</span><span>Seu drone de volta ao voo, com segurança.</span></div></footer>
+    <WhatsAppLink className="mobile-cta" location="mobile_sticky" label="Solicitar orçamento"><MessageCircle size={18} /> Solicitar orçamento</WhatsAppLink>
+  </>;
+}
