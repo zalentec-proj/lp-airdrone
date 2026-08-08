@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { ChevronRight, MessageCircle, Send } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
-import { BrazilIcon, BudgetIcon, ContactIcon, ExperienceIcon, FreightIcon, LocationIcon, RepairIcon, ShippingIcon, TechnicalIcon, WarrantyIcon } from "@/components/AirDroneIcons";
+import { ApprovalIcon, BrazilIcon, BudgetIcon, ContactIcon, DroneReturnIcon, ExperienceIcon, FreightIcon, LocationIcon, ShippingIcon, TechnicalIcon, WarrantyIcon } from "@/components/AirDroneIcons";
 import { Header } from "@/components/Header";
 import { Faq } from "@/components/Faq";
 import { SectionTracker } from "@/components/SectionTracker";
@@ -14,10 +14,11 @@ const benefits: Array<[AirDroneIcon, string]> = [
   [BudgetIcon, "Orçamento gratuito"], [FreightIcon, "Frete ida e volta incluso"], [WarrantyIcon, "Garantia de 90 dias"], [BrazilIcon, "Atendimento em todo o Brasil"],
 ];
 
-const steps: Array<[AirDroneIcon, string, string]> = [
-  [ContactIcon, "Solicite seu orçamento", "Fale conosco pelo WhatsApp e conte o que aconteceu com seu drone."],
-  [ShippingIcon, "Envie seu drone", "Você recebe as instruções para postar com frete de ida e volta incluso."],
-  [RepairIcon, "Reparo e retorno", "O reparo começa após sua aprovação e o drone volta testado para você."],
+const processSteps: Array<[AirDroneIcon, string, string]> = [
+  [ContactIcon, "Conte o que aconteceu", "Envie o modelo e descreva o problema."],
+  [ShippingIcon, "Receba as instruções", "Saiba como preparar e enviar o equipamento."],
+  [ApprovalIcon, "Aprove o orçamento", "O reparo só começa após sua aprovação."],
+  [DroneReturnIcon, "Receba seu drone de volta", "Após os testes, ele retorna pronto para voar."],
 ];
 
 function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) {
@@ -45,7 +46,7 @@ export default function Home() {
         </div>
       </section>
       <section className="benefit-wrap" aria-label="Benefícios"><div className="container benefits">{benefits.map(([Icon, text]) => <div className="benefit" key={text}><Icon aria-hidden="true" /><span>{text}</span></div>)}</div></section>
-      <section className="section section-light process" id="como-funciona"><SectionTracker id="como-funciona" index={2} /><div className="container"><SectionHeading eyebrow="COMO FUNCIONA" title="Simples, rápido e seguro." /><div className="steps">{steps.map(([Icon, title, text], index) => <article className="step" key={title}><span className="step-number">0{index + 1}</span><Icon aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+      <section className="section section-light process" id="como-funciona"><SectionTracker id="como-funciona" index={2} /><div className="container"><div className="process-heading"><p className="eyebrow">COMO FUNCIONA</p><h2>Simples, rápido e seguro.</h2><p>Do primeiro contato ao retorno do equipamento, você acompanha cada etapa.</p></div><div className="process-steps">{processSteps.map(([Icon, title, text], index) => <article className="process-step" key={title}><div className="process-icon"><Icon /></div><span className="process-number">0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div><div className="process-cta"><WhatsAppLink className="button" location="process_section" label="Começar meu atendimento">Começar meu atendimento <ChevronRight size={19} /></WhatsAppLink></div></div></section>
       <section className="section section-dark problems" id="servicos"><SectionTracker id="servicos" index={3} /><div className="container"><SectionHeading eyebrow="ASSISTÊNCIA ESPECIALIZADA DJI" title="O que aconteceu com seu drone?" copy="Identifique o problema mais próximo do seu caso e fale diretamente com a equipe técnica." /><div className="problem-grid">{problems.map((problem) => <article className="problem-card" key={problem.id}><img src={problem.image} alt="" /><div><h3>{problem.title}</h3><WhatsAppLink location="problem_card" label="Solicitar análise" problem={problem.title} aria-label={`Solicitar análise para ${problem.title}`}>Solicitar análise <ChevronRight size={16} /></WhatsAppLink></div></article>)}</div></div></section>
       <section className="section section-light models" id="modelos"><SectionTracker id="modelos" index={4} /><div className="container"><SectionHeading eyebrow="MODELOS ATENDIDOS" title="Assistência para diferentes linhas de drones DJI." copy="Consulte a equipe para confirmar o atendimento do seu modelo." /><div className="model-row">{models.map((model) => <article className="model-card" key={model.name}><img src={model.image} alt={`Drone da linha ${model.name}`} /><h3>{model.name}</h3><p>{model.examples}</p><WhatsAppLink location="models_section" label="Ver modelos" model={model.name}>Consultar linha <ChevronRight size={15} /></WhatsAppLink></article>)}</div><div className="center"><WhatsAppLink className="button" location="models_section" label="Consultar meu modelo">Consultar meu modelo</WhatsAppLink></div></div></section>
       <section className="section section-dark about" id="sobre"><SectionTracker id="sobre" index={5} /><div className="container about-grid"><div className="about-image"><img src="/assets/about/airdrone-workshop.webp" alt="Ambiente técnico da AirDrone em Londrina" /></div><div><SectionHeading eyebrow="CONHEÇA A AIRDRONE" title="Uma empresa real por trás de cada reparo." /><p className="about-text">A AirDrone é uma assistência técnica especializada em drones DJI. Com sede física em Londrina–PR, reúne equipe especializada, operação estruturada e atendimento reconhecido pela precisão e transparência. Cada serviço é realizado com atenção, respeito ao equipamento e compromisso em cada detalhe.</p><div className="proof-grid"><span><ExperienceIcon />+5 anos de experiência</span><span><LocationIcon />Sede física em Londrina–PR</span><span><TechnicalIcon />Especialistas em DJI</span><span><WarrantyIcon />90 dias de garantia</span></div><WhatsAppLink className="button" location="about_section" label="Falar com a equipe">Falar com a equipe</WhatsAppLink></div></div></section>

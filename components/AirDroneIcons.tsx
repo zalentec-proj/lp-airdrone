@@ -34,6 +34,14 @@ export function RepairIcon(props: IconProps) {
   return <IconFrame {...props}><path d="m14.9 5.1 4 4M5 18.9 18.9 5M6.6 5.3a3.35 3.35 0 0 0 4.16 4.16L5.1 15.1a2.8 2.8 0 1 0 3.96 3.96l5.67-5.67a3.35 3.35 0 0 0 4.1-4.22l-2.28 2.29-2.5-.45-.45-2.5z" /></IconFrame>;
 }
 
+export function ApprovalIcon(props: IconProps) {
+  return <IconFrame {...props}><rect x="6.2" y="4.5" width="10.3" height="15.3" rx="1.6" /><path d="M9.2 4.5v-1a2.8 2.8 0 0 1 5.6 0v1M9 10h4.7M9 13.2h3.2" /><circle cx="17.5" cy="16.5" r="3.4" fill="white" /><path d="m16 16.5 1 1 2-2.2" /></IconFrame>;
+}
+
+export function DroneReturnIcon(props: IconProps) {
+  return <IconFrame {...props}><path d="M8.1 11.5h7.8l1.2 5.5H6.9zM12 11.5V8.3M8.1 11.5 5.5 9.1M15.9 11.5l2.6-2.4M6.1 7.4H3.5M20.5 7.4h-2.6M7.3 6.1H5.2M18.8 6.1h-2.1" /><path d="M9.4 17v2.2h5.2V17M10.4 14.3h3.2" /><circle cx="4.2" cy="7.4" r="1.1" /><circle cx="19.8" cy="7.4" r="1.1" /></IconFrame>;
+}
+
 export function ExperienceIcon(props: IconProps) {
   return <IconFrame {...props}><path d="m12 3.5 2.06 4.2 4.64.67-3.35 3.27.79 4.61L12 14.08l-4.14 2.17.8-4.61-3.36-3.27 4.65-.67z" /><path d="M7.1 17.8 6 20.5l3.22-.88L12 21l2.78-1.38 3.22.88-1.1-2.7" /></IconFrame>;
 }
