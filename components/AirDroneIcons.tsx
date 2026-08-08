@@ -39,7 +39,7 @@ export function ApprovalIcon(props: IconProps) {
 }
 
 export function DroneReturnIcon(props: IconProps) {
-  return <IconFrame {...props}><path d="M8.1 11.5h7.8l1.2 5.5H6.9zM12 11.5V8.3M8.1 11.5 5.5 9.1M15.9 11.5l2.6-2.4M6.1 7.4H3.5M20.5 7.4h-2.6M7.3 6.1H5.2M18.8 6.1h-2.1" /><path d="M9.4 17v2.2h5.2V17M10.4 14.3h3.2" /><circle cx="4.2" cy="7.4" r="1.1" /><circle cx="19.8" cy="7.4" r="1.1" /></IconFrame>;
+  return <svg width="24" height="24" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}><g transform="translate(-4 -4) scale(1.17)"><path d="M7 13h9M32 13h9M11.5 10v6M36.5 10v6" /><path d="M5 10h13M30 10h13" /><path d="m16 15 6 7h4l6-7M32 15l-4 7h-6" /><path d="M19 22h10l2.4 7.1H16.6z" /><path d="M18.5 29.1 16 39M29.5 29.1 32 39M13.5 39h5M29.5 39h5" /><rect x="20" y="27" width="8" height="6" rx="1.1" /><circle cx="24" cy="30" r="1.25" /><path d="M22 22v-3M26 22v-3" /></g></svg>;
 }
 
 export function ExperienceIcon(props: IconProps) {
