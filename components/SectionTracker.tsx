@@ -8,7 +8,15 @@ export function SectionTracker({ id, index }: { id: string; index: number }) {
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { trackEvent("view_section", { section_id: id, section_index: index }); observer.disconnect(); } }, { threshold: 0.5 });
+    const section = element.closest("section");
+    section?.classList.add("reveal-ready");
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        section?.classList.add("is-visible");
+        trackEvent("view_section", { section_id: id, section_index: index });
+        observer.disconnect();
+      }
+    }, { threshold: 0.18 });
     observer.observe(element);
     return () => observer.disconnect();
   }, [id, index]);
