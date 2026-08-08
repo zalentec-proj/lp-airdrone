@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 540" fill="none">
+  <defs>
+    <linearGradient id="surface" x1="87" y1="57" x2="404" y2="468" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#163B55"/>
+      <stop offset="1" stop-color="#062239"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="520" height="540" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" stroke="#63F1E2" stroke-opacity=".13"/>
+    </pattern>
+  </defs>
+  <path d="M203 45 265 55 314 80 353 115 376 157 357 192 372 225 403 271 376 308 347 350 315 402 278 467 242 449 211 414 176 397 154 357 131 318 103 276 117 237 93 199 112 156 151 126 166 90Z" fill="url(#surface)" stroke="#4BE3D4" stroke-width="3"/>
+  <path d="M203 45 265 55 314 80 353 115 376 157 357 192 372 225 403 271 376 308 347 350 315 402 278 467 242 449 211 414 176 397 154 357 131 318 103 276 117 237 93 199 112 156 151 126 166 90Z" fill="url(#grid)" opacity=".85"/>
+  <g stroke="#74F4E8" stroke-opacity=".4" stroke-width="1.5">
+    <path d="M151 126 191 151 187 213 150 245 131 318"/>
+    <path d="M265 55 254 114 281 156 357 192"/>
+    <path d="M187 213 244 206 281 156"/>
+    <path d="M244 206 253 266 305 291 372 225"/>
+    <path d="M131 318 196 328 231 370 211 414"/>
+    <path d="M196 328 253 266 305 291 315 402"/>
+    <path d="M231 370 278 467"/>
+  </g>
+  <g fill="#79F7E9" opacity=".75">
+    <circle cx="151" cy="126" r="3"/><circle cx="187" cy="213" r="3"/><circle cx="254" cy="114" r="3"/><circle cx="281" cy="156" r="3"/><circle cx="244" cy="206" r="3"/><circle cx="253" cy="266" r="3"/><circle cx="305" cy="291" r="3"/><circle cx="196" cy="328" r="3"/><circle cx="231" cy="370" r="3"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="229" cy="346" r="22" fill="#00B8A8" fill-opacity=".17"/>
+    <circle cx="229" cy="346" r="9" fill="#4CFFF0" stroke="#E4FFFC" stroke-width="3"/>
+  </g>
+  <path d="M242 337 294 300" stroke="#69F6E7" stroke-width="2" stroke-dasharray="5 5"/>
+  <g transform="translate(293 269)">
+    <rect width="148" height="55" rx="7" fill="#E8FFFC"/>
+    <text x="13" y="22" fill="#007E74" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.4">SEDE AIRDRONE</text>
+    <text x="13" y="40" fill="#062239" font-family="Arial, sans-serif" font-size="14" font-weight="700">Londrina, PR</text>
+  </g>
+  <text x="260" y="517" text-anchor="middle" fill="#92B7C7" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">ATENDIMENTO EM TODO O BRASIL</text>
+</svg>
