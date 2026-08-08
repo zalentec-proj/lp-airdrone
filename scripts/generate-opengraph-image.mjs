@@ -27,19 +27,19 @@ const overlay = Buffer.from(`
     <rect width="100%" height="100%" fill="url(#shade)"/>
     <path d="M0 74H38L64 48H262" fill="none" stroke="#12c7c1" stroke-opacity="0.52" stroke-width="2"/>
     <circle cx="284" cy="48" r="5" fill="#12c7c1" fill-opacity="0.75"/>
-    <text x="56" y="158" fill="#12c7c1" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3.2">ASSISTÊNCIA TÉCNICA DJI</text>
-    <text x="56" y="410" fill="#ffffff" font-family="Arial, sans-serif" font-size="29" font-weight="700">REPARO DE DRONES</text>
-    <text x="56" y="440" fill="#d7e7ed" font-family="Arial, sans-serif" font-size="19" font-weight="700">COM SEGURANÇA E GARANTIA</text>
-    <rect x="56" y="474" width="270" height="58" rx="8" fill="#12c7c1"/>
-    <text x="79" y="511" fill="#031426" font-family="Arial, sans-serif" font-size="17" font-weight="700">SOLICITAR ORÇAMENTO  →</text>
-    <text x="56" y="577" fill="#d7e7ed" font-family="Arial, sans-serif" font-size="15" font-weight="700">ORÇAMENTO GRATUITO  •  FRETE INCLUSO</text>
+    <text x="600" y="122" fill="#12c7c1" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3.2" text-anchor="middle">ASSISTÊNCIA TÉCNICA DJI</text>
+    <text x="600" y="384" fill="#ffffff" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle">REPARO DE DRONES</text>
+    <text x="600" y="416" fill="#d7e7ed" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">COM SEGURANÇA E GARANTIA</text>
+    <rect x="465" y="452" width="270" height="58" rx="8" fill="#12c7c1"/>
+    <text x="600" y="489" fill="#031426" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">SOLICITAR ORÇAMENTO  →</text>
+    <text x="600" y="562" fill="#d7e7ed" font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">ORÇAMENTO GRATUITO  •  FRETE INCLUSO</text>
   </svg>
 `);
 
 await sharp(background)
   .composite([
     { input: overlay },
-    { input: logoImage, left: 56, top: 225 },
+    { input: logoImage, left: 428, top: 188 },
   ])
   .png({ compressionLevel: 9, palette: true })
   .toFile(output);
