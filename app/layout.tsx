@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ConsentBanner } from "@/components/ConsentBanner";
 
-const manrope = Manrope({
+const manrope = localFont({
   variable: "--font-manrope",
-  subsets: ["latin"],
   display: "swap",
+  src: [
+    { path: "../public/fonts/manrope-400.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/manrope-500.ttf", weight: "500", style: "normal" },
+    { path: "../public/fonts/manrope-700.ttf", weight: "700", style: "normal" },
+    { path: "../public/fonts/manrope-800.ttf", weight: "800", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {

@@ -8,11 +8,12 @@ type Choice = { analytics: boolean; marketing: boolean };
 const storageKey = "airdrone-consent-v1";
 
 export function ConsentBanner() {
-  const savedChoice = useSyncExternalStore(
+  const storedChoice = useSyncExternalStore(
     () => () => {},
-    () => { const saved = localStorage.getItem(storageKey); return saved ? JSON.parse(saved) as Choice : null; },
+    () => localStorage.getItem(storageKey),
     () => null,
   );
+  const savedChoice = storedChoice ? JSON.parse(storedChoice) as Choice : null;
   const [choiceOverride, setChoiceOverride] = useState<Choice | null | undefined>(undefined);
   const [settings, setSettings] = useState(false);
   const choice = choiceOverride === undefined ? savedChoice : choiceOverride;
