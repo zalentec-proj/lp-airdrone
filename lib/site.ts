@@ -37,39 +37,29 @@ export const models = [
 
 export const faqItems = [
   {
+    id: "price-deadline",
+    question: "Quanto custa e qual é o prazo para consertar meu drone?",
+    answer: "O custo e o tempo de reparo variam bastante de acordo com o modelo, a gravidade do dano (como quedas ou danos por água) e a necessidade de peças de reposição. Após recebermos o seu equipamento, fazemos uma avaliação técnica e enviamos um orçamento detalhado com o prazo exato. Reparos mais simples costumam ser finalizados entre 3 a 7 dias úteis.",
+  },
+  {
     id: "budget",
-    question: "O orçamento é realmente gratuito?",
-    answer: "Sim. A avaliação é gratuita e sem compromisso. O reparo só começa depois que você aprova o orçamento detalhado enviado pela equipe.",
-  },
-  {
-    id: "freight",
-    question: "Como funciona o frete de ida e volta?",
-    answer: "Depois do primeiro contato, a equipe orienta a postagem e envia a etiqueta. Você embala o equipamento com segurança, despacha na agência indicada e recebe o drone de volta após o reparo e os testes.",
-  },
-  {
-    id: "evaluation",
-    question: "Quanto tempo demora a avaliação?",
-    answer: "O site atual informa orçamento em até 3 dias úteis após o recebimento do equipamento. O prazo pode variar conforme o modelo e o dano identificado.",
-  },
-  {
-    id: "approval",
-    question: "O reparo só começa depois da minha aprovação?",
-    answer: "Sim. A AirDrone envia o orçamento detalhado e só inicia o serviço depois da aprovação do cliente.",
+    question: "Vocês cobram para fazer o orçamento?",
+    answer: "Não, nosso orçamento é 100% gratuito e sem compromisso! Você pode trazer ou enviar o seu drone para a nossa assistência. Nossa equipe técnica fará uma análise completa para identificar o problema e o conserto só será iniciado após a sua aprovação do valor.",
   },
   {
     id: "models",
-    question: "Quais modelos DJI são atendidos?",
-    answer: "A assistência é exclusiva para DJI. São atendidas linhas Mini, Air, Mavic, Phantom e FPV. Consulte a equipe para confirmar a versão exata do seu equipamento.",
+    question: "Quais modelos de drones vocês consertam? Atendem outras marcas?",
+    answer: "Somos uma assistência técnica exclusiva para a linha DJI, o que garante um serviço de alta especialização e peças originais. Atendemos toda a Linha Mini completa, incluindo o DJI Mini 2, Mini 3, Mini 4 e todas as versões Séries Pro. Também realizamos manutenção nas linhas Air (Air 2, 2S, Air 3), Mavic, Phantom e drones FPV da DJI. Importante: Por foco total em qualidade e disponibilidade de peças específicas, não atendemos e não realizamos reparos em drones de outras marcas (como Xiaomi, Fimi, Hubsan ou drones de brinquedo). Se o seu drone é DJI, ele está em boas mãos!",
   },
   {
     id: "warranty",
-    question: "Qual é o prazo de garantia?",
-    answer: "Serviços realizados e peças substituídas contam com 90 dias de garantia para o problema reparado, conforme as condições da empresa.",
+    question: "O conserto e as peças trocadas têm garantia?",
+    answer: "Com certeza! Prezamos pela segurança do seu voo. Todos os nossos serviços de manutenção e as peças que substituímos contam com uma garantia de 90 dias. Caso o mesmo problema volte a ocorrer nesse período, resolveremos sem custo adicional.",
   },
   {
-    id: "installments",
-    question: "É possível parcelar o reparo?",
-    answer: "O site atual informa parcelamento em até 10x sem juros no cartão. Confirme essa condição com a equipe no momento do orçamento.",
+    id: "shipping",
+    question: "Moro em outra cidade ou estado. Como funciona o envio do drone? Eu preciso pagar o frete?",
+    answer: "Não, você não paga absolutamente nada de frete! Nós sabemos que enviar o drone pode gerar insegurança e custos extras, por isso oferecemos frete de ida e volta 100% por nossa conta para clientes de todo o Brasil. O processo é super simples: você fala com nossa equipe pelo WhatsApp, nós geramos uma etiqueta de envio já paga, e você só precisa embalar seu drone com segurança e despachar na agência mais próxima. Depois de consertado e testado, nós enviamos o equipamento de volta para a sua casa, também por nossa conta. Sua única preocupação é voltar a voar!",
   },
 ] as const;
 

@@ -6,7 +6,7 @@ const root = new URL("../", import.meta.url);
 
 test("renders the main commercial and accessibility landmarks", async () => {
   const page = await readFile(new URL("app/page.tsx", root), "utf8");
-  assert.match(page, /Seu drone DJI/);
+  assert.match(page, /SEU DRONE CAIU, MOLHOU OU APRESENTOU ERRO/);
   assert.match(page, /id="servicos"/);
   assert.match(page, /id="faq"/);
   assert.match(page, /application\/ld\+json/);
@@ -30,6 +30,7 @@ test("builds context-aware WhatsApp links and analytics events", async () => {
     readFile(new URL("lib/site.ts", root), "utf8"),
   ]);
   assert.match(site, /5543991622184/);
+  assert.match(site, /Quanto custa e qual é o prazo para consertar meu drone/);
   assert.match(whatsapp, /searchParams\.set\("text"/);
   assert.match(analytics, /click_whatsapp/);
   assert.match(analytics, /consent/);
