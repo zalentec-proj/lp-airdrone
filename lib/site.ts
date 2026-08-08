@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "AirDrone Assistência Técnica",
   shortName: "AirDrone",
-  url: "https://airdrone.com.br",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://lp-airdrone.vercel.app",
   phoneDisplay: "(43) 99162-2184",
   whatsappNumber: "5543991622184",
   location: "Londrina, PR",

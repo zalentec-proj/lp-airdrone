@@ -14,17 +14,35 @@ const manrope = localFont({
   ],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lp-airdrone.vercel.app";
+const openGraphTitle = "Reparo de drones e assistência técnica DJI | AirDrone";
+const openGraphDescription =
+  "Orçamento 100% gratuito, frete de ida e volta incluso e equipe especializada para colocar seu drone de volta ao voo.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://airdrone.com.br"),
-  title: "Assistência Técnica DJI com Frete Grátis | AirDrone",
-  description: "Reparo especializado de drones DJI com orçamento gratuito, frete de ida e volta incluso e 90 dias de garantia. Atendimento em todo o Brasil.",
+  metadataBase: new URL(siteUrl),
+  title: "Reparo de drones e assistência técnica DJI | AirDrone",
+  description: openGraphDescription,
   alternates: { canonical: "/" },
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
   },
-  openGraph: { type: "website", locale: "pt_BR", siteName: "AirDrone Assistência Técnica", title: "Seu drone DJI voltou a voar com segurança | AirDrone", description: "Assistência técnica especializada, orçamento gratuito, frete de ida e volta incluso e 90 dias de garantia.", url: "/", images: [{ url: "/social/og-airdrone.png", width: 1731, height: 909, alt: "AirDrone — assistência técnica DJI" }] },
-  twitter: { card: "summary_large_image", title: "Seu drone DJI voltou a voar com segurança | AirDrone", description: "Reparo especializado, orçamento gratuito e atendimento em todo o Brasil.", images: ["/social/og-airdrone.png"] },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: "AirDrone Assistência Técnica",
+    title: openGraphTitle,
+    description: openGraphDescription,
+    url: "/",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "AirDrone — reparo de drones e assistência técnica DJI" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: openGraphTitle,
+    description: openGraphDescription,
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({
