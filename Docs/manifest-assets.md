@@ -12,4 +12,5 @@ Todos os arquivos abaixo foram copiados para `public/` para evitar hotlinks na v
 | `assets/models/*.webp` | Site atual | Famílias DJI | Fotografias atuais de linhas DJI; confirmar modelo exato antes de novos usos comerciais |
 | `assets/about/airdrone-workshop.webp` | Site atual | Seção Sobre | Ambiente técnico da AirDrone |
 | `social/og-airdrone.png` | Criado para este projeto | Prévia Open Graph | Composição ilustrativa de bancada técnica; não retrata modelo DJI específico |
+| `social/og-airdrone-home.png` | Criado a partir da foto do hero e logo oficial | Prévia Open Graph atual | Marca e CTA posicionadas na área segura da miniatura social |
 | `icon.svg` | Site atual | Favicon e manifest | Símbolo da marca |

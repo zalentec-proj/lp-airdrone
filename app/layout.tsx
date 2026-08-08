@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     title: openGraphTitle,
     description: openGraphDescription,
     url: "/",
-    images: [{ url: "/social/og-airdrone.png", width: 1731, height: 909, alt: "AirDrone — reparo de drones e assistência técnica DJI" }],
+    images: [{ url: "/social/og-airdrone-home.png", width: 1200, height: 630, alt: "AirDrone — reparo de drones e assistência técnica DJI" }],
   },
   twitter: {
     card: "summary_large_image",
     title: openGraphTitle,
     description: openGraphDescription,
-    images: ["/social/og-airdrone.png"],
+    images: ["/social/og-airdrone-home.png"],
   },
 };
 
