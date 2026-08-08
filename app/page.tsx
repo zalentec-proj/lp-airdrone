@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { ChevronRight, MessageCircle, Send } from "lucide-react";
 import type { ComponentType, SVGProps } from "react";
-import { ApprovalIcon, BrazilIcon, BudgetIcon, ContactIcon, DroneReturnIcon, ExperienceIcon, FreightIcon, LocationIcon, ShippingIcon, TechnicalIcon, WarrantyIcon } from "@/components/AirDroneIcons";
+import { ApprovalIcon, BudgetIcon, ContactIcon, DroneReturnIcon, ExperienceIcon, FreightIcon, LocationIcon, ShippingIcon, TechnicalIcon, WarrantyIcon } from "@/components/AirDroneIcons";
 import { Header } from "@/components/Header";
 import { Faq } from "@/components/Faq";
 import { SectionTracker } from "@/components/SectionTracker";
@@ -11,7 +11,7 @@ import { models, problems, reviews, siteConfig } from "@/lib/site";
 type AirDroneIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
 const benefits: Array<[AirDroneIcon, string]> = [
-  [BudgetIcon, "Orçamento gratuito"], [FreightIcon, "Frete ida e volta incluso"], [WarrantyIcon, "Garantia de 90 dias"], [BrazilIcon, "Atendimento em todo o Brasil"],
+  [BudgetIcon, "Orçamento 100% gratuito"], [FreightIcon, "Frete de ida e volta incluso"], [TechnicalIcon, "Laboratório próprio com mais de 5 anos de experiência"],
 ];
 
 const processSteps: Array<[AirDroneIcon, string, string]> = [
@@ -41,7 +41,7 @@ export default function Home() {
       <section className="hero" id="inicio"><SectionTracker id="inicio" index={1} />
         <div className="hero-backdrop" />
         <div className="container hero-grid">
-          <div className="hero-copy"><p className="eyebrow">ASSISTÊNCIA TÉCNICA ESPECIALIZADA DJI</p><h1>Seu drone DJI <span>voltou a voar</span> com segurança.</h1><p>Assistência técnica especializada, orçamento gratuito e frete de ida e volta incluso.</p><div className="hero-actions"><WhatsAppLink className="button" location="hero_primary" label="Solicitar orçamento"><Send size={18} /> Solicitar orçamento</WhatsAppLink><WhatsAppLink className="button button-outline" location="hero_secondary" label="Falar com especialista"><MessageCircle size={18} /> Falar com especialista</WhatsAppLink></div></div>
+          <div className="hero-copy"><p className="eyebrow">SEU DRONE CAIU, MOLHOU OU APRESENTOU ERRO?</p><h1>Reparo de drones e assistência técnica DJI com segurança e garantia.</h1><p>Não entregue seu equipamento nas mãos de curiosos. Somos especialistas em placas, motores, gimbal e sinal para colocar seu drone de volta ao voo.</p><div className="hero-actions"><WhatsAppLink className="button" location="hero_primary" label="Solicitar orçamento"><Send size={18} /> Solicitar orçamento</WhatsAppLink><WhatsAppLink className="button button-outline" location="hero_secondary" label="Falar com especialista"><MessageCircle size={18} /> Falar com especialista</WhatsAppLink></div></div>
           <img className="hero-drone" src="/assets/hero/drone.webp" alt="Drone DJI em assistência técnica" />
         </div>
       </section>

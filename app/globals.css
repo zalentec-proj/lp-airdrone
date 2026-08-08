@@ -48,3 +48,6 @@ h3 { font-size:1.14rem; }
 
 .section.reveal-ready .process-heading,.section.reveal-ready .process-step,.section.reveal-ready .process-cta{opacity:0;transform:translateY(18px);filter:blur(7px)}.section.is-visible .process-heading,.section.is-visible .process-step,.section.is-visible .process-cta{animation:reveal-in .62s cubic-bezier(.2,.8,.2,1) both}.section.is-visible .process-step:nth-child(2){animation-delay:.08s}.section.is-visible .process-step:nth-child(3){animation-delay:.16s}.section.is-visible .process-step:nth-child(4){animation-delay:.24s}.section.is-visible .process-cta{animation-delay:.3s}
 @media(prefers-reduced-motion:reduce){.section.reveal-ready .process-heading,.section.reveal-ready .process-step,.section.reveal-ready .process-cta{opacity:1;transform:none;filter:none;animation:none}}
+
+.benefits{grid-template-columns:repeat(3,1fr)}
+@media(max-width:600px){.benefits{grid-template-columns:1fr}.benefit{border-right:0}.benefit:not(:last-child){border-bottom:1px solid #e7edf1}.benefit:last-child{border-bottom:0}}
