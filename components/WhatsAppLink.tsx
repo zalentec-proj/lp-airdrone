@@ -1,7 +1,7 @@
 "use client";
 
 import type { ComponentProps, ReactNode } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackLead } from "@/lib/analytics";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 type Props = {
@@ -22,7 +22,7 @@ export function WhatsAppLink({ children, className, location, label, problem, mo
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => {
-        trackEvent("click_whatsapp", { cta_location: location, cta_label: label, problem_type: problem, drone_family: model });
+        trackLead({ cta_location: location, cta_label: label, problem_type: problem, drone_family: model });
         if (problem) trackEvent("select_problem", { problem_type: problem });
         if (model) trackEvent("select_model", { drone_family: model });
       }}
